@@ -1,0 +1,30 @@
+version: '3'
+services: 
+    node1: 
+        image: ipfs/go-ipfs
+        restart: unless-stopped
+        ports:
+            - "7000:4001"
+            - "9000:5001"
+            - "8080:8080"
+        volumes:
+            - ./node1:/home
+
+    node2: 
+        image: ipfs/go-ipfs
+        restart: unless-stopped
+        ports:
+            - "7001:4001"
+            - "9001:5001"
+            - "8081:8080"
+        volumes:
+            - ./node2:/home
+    node3: 
+        image: ipfs/go-ipfs
+        restart: unless-stopped
+        ports:
+            - "7002:4001"
+            - "9002:5001"
+            - "8082:8080"
+        volumes:
+            - ./node3:/home
